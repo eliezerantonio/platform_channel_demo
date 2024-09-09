@@ -14,7 +14,12 @@ import UIKit
 
         methodChanel.setMethodCallHandler({ (call: FlutterMethodCall, result: FlutterResult) in
             if call.method == "version" {
-                print(call.arguments ?? "nil")
+                let numbers: [Int] = call.arguments as! [Int]
+
+                for item in numbers {
+                    print("number \(item)")
+                }
+
                 let version = UIDevice().systemVersion
 
                 result("iOS \(version)")

@@ -7,10 +7,7 @@ class FirstNativePlatformChannel {
 
   Future<void> version() async {
     try {
-      final result = await _methodChannel.invokeMethod("version", {
-        "name": "eliezer",
-        "age": null,
-      });
+      final result = await _methodChannel.invokeMethod("version", [1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
       log(result);
     } catch (e) {
