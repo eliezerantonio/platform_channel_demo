@@ -6,8 +6,15 @@ class FirstNativePlatformChannel {
   final MethodChannel _methodChannel = const MethodChannel("com.eliezerantonio/first_platform_channel");
 
   Future<void> version() async {
-    final result = await _methodChannel.invokeMethod("version", {});
+    try {
+      final result = await _methodChannel.invokeMethod("version", {
+        "name": "eliezer",
+        "age": null,
+      });
 
-    log(result);
+      log(result);
+    } catch (e) {
+      log("Error $e");
+    }
   }
 }
