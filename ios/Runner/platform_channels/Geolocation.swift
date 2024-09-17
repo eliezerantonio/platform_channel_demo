@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import CoreLocation
+
+class Geolocation: NSObject{
+    
+    
+}
